@@ -1,2 +1,2 @@
 language: csharp
-solution: StageFly.sln
+solution: src/StageFly.sln

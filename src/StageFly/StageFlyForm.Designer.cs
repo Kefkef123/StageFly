@@ -33,6 +33,8 @@
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.ScoreTextBox = new System.Windows.Forms.TextBox();
             this.SubmitButtom = new System.Windows.Forms.Button();
+            this.CityLabel = new System.Windows.Forms.Label();
+            this.CitiesComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // PlayerIdLabel
@@ -48,7 +50,7 @@
             // 
             this.PlayerIdTextBox.Location = new System.Drawing.Point(72, 10);
             this.PlayerIdTextBox.Name = "PlayerIdTextBox";
-            this.PlayerIdTextBox.Size = new System.Drawing.Size(59, 20);
+            this.PlayerIdTextBox.Size = new System.Drawing.Size(75, 20);
             this.PlayerIdTextBox.TabIndex = 1;
             // 
             // ScoreLabel
@@ -64,32 +66,55 @@
             // 
             this.ScoreTextBox.Location = new System.Drawing.Point(72, 38);
             this.ScoreTextBox.Name = "ScoreTextBox";
-            this.ScoreTextBox.Size = new System.Drawing.Size(59, 20);
+            this.ScoreTextBox.Size = new System.Drawing.Size(75, 20);
             this.ScoreTextBox.TabIndex = 3;
             // 
             // SubmitButtom
             // 
-            this.SubmitButtom.Location = new System.Drawing.Point(15, 64);
+            this.SubmitButtom.Location = new System.Drawing.Point(15, 91);
             this.SubmitButtom.Name = "SubmitButtom";
-            this.SubmitButtom.Size = new System.Drawing.Size(116, 23);
+            this.SubmitButtom.Size = new System.Drawing.Size(132, 23);
             this.SubmitButtom.TabIndex = 4;
             this.SubmitButtom.Text = "Upload your score";
             this.SubmitButtom.UseVisualStyleBackColor = true;
             this.SubmitButtom.Click += new System.EventHandler(this.SubmitButtom_Click);
             // 
+            // CityLabel
+            // 
+            this.CityLabel.AutoSize = true;
+            this.CityLabel.Location = new System.Drawing.Point(12, 68);
+            this.CityLabel.Name = "CityLabel";
+            this.CityLabel.Size = new System.Drawing.Size(27, 13);
+            this.CityLabel.TabIndex = 5;
+            this.CityLabel.Text = "City:";
+            // 
+            // CitiesComboBox
+            // 
+            this.CitiesComboBox.FormattingEnabled = true;
+            this.CitiesComboBox.Items.AddRange(new object[] {
+            "Breda",
+            "Maastricht",
+            "Lelystad",
+            "Den Bosch",
+            "Try out"});
+            this.CitiesComboBox.Location = new System.Drawing.Point(72, 65);
+            this.CitiesComboBox.Name = "CitiesComboBox";
+            this.CitiesComboBox.Size = new System.Drawing.Size(75, 21);
+            this.CitiesComboBox.TabIndex = 6;
+            // 
             // StageFlyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(143, 105);
+            this.ClientSize = new System.Drawing.Size(157, 126);
+            this.Controls.Add(this.CitiesComboBox);
+            this.Controls.Add(this.CityLabel);
             this.Controls.Add(this.SubmitButtom);
             this.Controls.Add(this.ScoreTextBox);
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.PlayerIdTextBox);
             this.Controls.Add(this.PlayerIdLabel);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(159, 144);
-            this.MinimumSize = new System.Drawing.Size(159, 144);
             this.Name = "StageFlyForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -104,6 +129,8 @@
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.TextBox ScoreTextBox;
         private System.Windows.Forms.Button SubmitButtom;
+        private System.Windows.Forms.Label CityLabel;
+        private System.Windows.Forms.ComboBox CitiesComboBox;
     }
 }
 

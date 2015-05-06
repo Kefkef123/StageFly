@@ -35,6 +35,8 @@
             this.SubmitButtom = new System.Windows.Forms.Button();
             this.CityLabel = new System.Windows.Forms.Label();
             this.CitiesComboBox = new System.Windows.Forms.ComboBox();
+            this.TopPlayersBox = new System.Windows.Forms.ListBox();
+            this.TopLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PlayerIdLabel
@@ -101,12 +103,33 @@
             this.CitiesComboBox.Name = "CitiesComboBox";
             this.CitiesComboBox.Size = new System.Drawing.Size(75, 21);
             this.CitiesComboBox.TabIndex = 6;
+            this.CitiesComboBox.SelectedIndexChanged += new System.EventHandler(this.CitiesComboBox_SelectedIndexChanged);
+            // 
+            // TopPlayersBox
+            // 
+            this.TopPlayersBox.FormattingEnabled = true;
+            this.TopPlayersBox.Location = new System.Drawing.Point(203, 10);
+            this.TopPlayersBox.Name = "TopPlayersBox";
+            this.TopPlayersBox.Size = new System.Drawing.Size(167, 329);
+            this.TopPlayersBox.TabIndex = 7;
+            this.TopPlayersBox.SelectedIndexChanged += new System.EventHandler(this.TopPlayersBox_SelectedIndexChanged);
+            // 
+            // TopLabel
+            // 
+            this.TopLabel.AutoSize = true;
+            this.TopLabel.Location = new System.Drawing.Point(153, 13);
+            this.TopLabel.Name = "TopLabel";
+            this.TopLabel.Size = new System.Drawing.Size(44, 13);
+            this.TopLabel.TabIndex = 8;
+            this.TopLabel.Text = "Top 25:";
             // 
             // StageFlyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(157, 126);
+            this.ClientSize = new System.Drawing.Size(386, 355);
+            this.Controls.Add(this.TopLabel);
+            this.Controls.Add(this.TopPlayersBox);
             this.Controls.Add(this.CitiesComboBox);
             this.Controls.Add(this.CityLabel);
             this.Controls.Add(this.SubmitButtom);
@@ -116,7 +139,7 @@
             this.Controls.Add(this.PlayerIdLabel);
             this.MaximizeBox = false;
             this.Name = "StageFlyForm";
-            this.Text = "Form1";
+            this.Text = "StageFly";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,6 +154,8 @@
         private System.Windows.Forms.Button SubmitButtom;
         private System.Windows.Forms.Label CityLabel;
         private System.Windows.Forms.ComboBox CitiesComboBox;
+        private System.Windows.Forms.ListBox TopPlayersBox;
+        private System.Windows.Forms.Label TopLabel;
     }
 }
 

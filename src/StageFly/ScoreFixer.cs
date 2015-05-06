@@ -23,9 +23,17 @@ namespace StageFly
             }
         }
 
-        public async Task<IEnumerable<Player>> GetTopPlayers()
+        public async Task<IEnumerable<Player>> GetTopPlayers(string city)
         {
-            return null;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(_apiEndPoint);
+
+                var result = await client.GetAsync(String.Format("/gamePlayed/getRanking/?city={0}", city));
+                var content = await result.Content.ReadAsStringAsync();
+
+                return JsonConvert.DeserializeObject<IEnumerable<Player>>(content, _serializerSettings);
+            }
         }
 
         private static int CalculateCode(int score)

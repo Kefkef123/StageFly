@@ -19,7 +19,7 @@ namespace StageFly
         {
             SubmitButtom.Enabled = false;
             _playerId = Int32.Parse(PlayerIdTextBox.Text);
-            _score = Int32.Parse(ScoreTextBox.Text);
+            _score = Int64.Parse(ScoreTextBox.Text);
             _city = CitiesComboBox.SelectedItem.ToString();
 
             var updatedPlayer = await _scoreFixer.SetScore(_score, _playerId, _city);
@@ -70,7 +70,7 @@ namespace StageFly
         }
 
         private int _playerId;
-        private int _score;
+        private long _score;
         private string _city;
         private ScoreFixer _scoreFixer;
         private IEnumerable<Player> _topPlayers;

@@ -8,7 +8,7 @@ namespace StageFly
 {
     public class ScoreFixer
     {
-        public async Task<Player> SetScore(int score, int playerId, string city)
+        public async Task<Player> SetScore(long score, int playerId, string city)
         {
             var code = CalculateCode(score);
 
@@ -36,7 +36,7 @@ namespace StageFly
             }
         }
 
-        private static int CalculateCode(int score)
+        private static long CalculateCode(long score)
         {
             return (score*13) + 295;
         }

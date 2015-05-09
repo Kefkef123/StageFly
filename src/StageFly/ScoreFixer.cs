@@ -36,6 +36,19 @@ namespace StageFly
             }
         }
 
+        public async Task<IEnumerable<CityObject>> GetCities()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(_apiEndPoint);
+
+                var result = await client.GetAsync("/cities");
+                var content = await result.Content.ReadAsStringAsync();
+
+                return JsonConvert.DeserializeObject<IEnumerable<CityObject>>(content);
+            }
+        }
+
         private static long CalculateCode(long score)
         {
             return (score*13) + 295;

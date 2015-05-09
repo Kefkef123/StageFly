@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CityObject.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="ScoreFixer.cs" />
     <Compile Include="StageFlyForm.cs">

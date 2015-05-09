@@ -38,6 +38,16 @@ namespace StageFly
             SubmitButtom.Enabled = true;
         }
 
+        private async void StageFlyForm_Load(object sender, EventArgs e)
+        {
+            var cities = await _scoreFixer.GetCities();
+
+            foreach (var city in cities)
+            {
+                CitiesComboBox.Items.Add(city.City);
+            }
+        }
+
         private async void CitiesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             await UpdateList(CitiesComboBox.SelectedItem.ToString());
@@ -72,11 +82,7 @@ namespace StageFly
         private int _playerId;
         private long _score;
         private string _city;
-        private ScoreFixer _scoreFixer;
+        private readonly ScoreFixer _scoreFixer;
         private IEnumerable<Player> _topPlayers;
-
-
-
-
     }
 }

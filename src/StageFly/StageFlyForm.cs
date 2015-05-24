@@ -28,7 +28,7 @@ namespace StageFly
             {
                 MessageBox.Show(String.Format("You are now at place {0}", updatedPlayer.Rank));
 
-                await UpdateList(CitiesComboBox.SelectedItem.ToString());
+                await UpdateList();
             }
             else
             {
@@ -50,7 +50,7 @@ namespace StageFly
 
         private async void CitiesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            await UpdateList(CitiesComboBox.SelectedItem.ToString());
+            await UpdateList();
         }
 
         private void TopPlayersBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace StageFly
             ScoreTextBox.Text = selectedPlayer.Score.ToString();
         }
 
-        private async Task UpdateList(string city)
+        private async Task UpdateList()
         {
             TopPlayersBox.Items.Clear();
 

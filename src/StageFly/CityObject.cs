@@ -1,4 +1,7 @@
-﻿public class CityObject
+﻿namespace StageFly
 {
-    public string City { get; set; }
+    public class CityObject
+    {
+        public string City { get; set; }
+    }
 }

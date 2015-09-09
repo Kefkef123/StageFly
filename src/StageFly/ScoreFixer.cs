@@ -16,7 +16,7 @@ namespace StageFly
             {
                 client.BaseAddress = new Uri(_apiEndPoint);
 
-                var result = await client.GetAsync(String.Format("/gamePlayed/?playerId={0}&score={1}&city={2}&code={3}", playerId, score, city, code));
+                var result = await client.GetAsync($"/gamePlayed/?playerId={playerId}&score={score}&city={city}&code={code}");
                 var content = await result.Content.ReadAsStringAsync();
 
                 return JsonConvert.DeserializeObject<Player>(content, _serializerSettings);
@@ -29,7 +29,7 @@ namespace StageFly
             {
                 client.BaseAddress = new Uri(_apiEndPoint);
 
-                var result = await client.GetAsync(String.Format("/gamePlayed/getRanking/?city={0}", city));
+                var result = await client.GetAsync($"/gamePlayed/getRanking/?city={city}");
                 var content = await result.Content.ReadAsStringAsync();
 
                 return JsonConvert.DeserializeObject<IEnumerable<Player>>(content, _serializerSettings);

@@ -26,7 +26,7 @@ namespace StageFly
 
             if (updatedPlayer != null)
             {
-                MessageBox.Show(String.Format("You are now at place {0}", updatedPlayer.Rank));
+                MessageBox.Show($"You are now at place {updatedPlayer.Rank}");
 
                 await UpdateList();
             }
@@ -74,7 +74,7 @@ namespace StageFly
 
             foreach (var player in _topPlayers)
             {
-                TopPlayersBox.Items.Add(String.Format("{0}. {1} ({2} points)", rank, player.Name, player.Score));
+                TopPlayersBox.Items.Add($"{rank}. {player.Name} ({player.Score} points)");
                 rank++;
             }
         }
